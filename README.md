@@ -3,7 +3,7 @@
 <a href="https://pypi.org/project/lightgbm" rel="nofollow"><img src="https://camo.githubusercontent.com/e78e5fa3a797f79dfb9179ae5d4c34f5409d45b9/68747470733a2f2f696d672e736869656c64732e696f2f707970692f762f6c6967687467626d2e7376673f6c6f676f3d70797069266c6f676f436f6c6f723d7768697465" alt="PyPI Version" data-canonical-src="https://img.shields.io/pypi/v/lightgbm.svg?logo=pypi&amp;logoColor=white" style="max-width:100%;"></a>
 
 你将习得：数据的处理、LightGBM、sklearn包（里面含有：GridSearchCV寻找最优参、StratifiedKFold分层5折切分、train_test_split单次数据切分等）、画AUC图、画混淆矩阵图，并输出预测名单。
-### 注释覆盖率为80%左右，旨在帮助快速入门，新手级
+### 注释覆盖率为80%左右，旨在帮助快速入门，新手级，持续更新
 
 ## 该项目涉及的如下：
 <ul>
@@ -33,3 +33,4 @@
 ## 说明
 <p> 本人水平有限，代码可能有遗漏错误的地方，望不吝赐教，万分感谢。
 <p> Email：909336740@qq.com
+<p> QQ：909336740
