@@ -7,6 +7,14 @@
 
 ## 该项目涉及的如下：
 <ul>
+  <li>业务理解
+  </li>
+  <li>数据理解
+    <ul>
+      <li>数据质量探查
+      <li>重要特征探查
+    </ul>
+  </li>
   <li> 数据处理
     <ul>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>preprocessing函（数据切分成训练用数据X，和校对数据y）</a>
