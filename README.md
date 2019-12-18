@@ -37,6 +37,7 @@
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_plot.py'>confusion_matrix/plot_confusion_matrix（画混淆矩阵图）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/importance_plt.py'>importance_plt（画特征重要性图）</a>
     </ul>
+  <li> <a href='https://github.com/ben1234560/DataMiningCase/tree/master/doc'>模型评估及实验模板</a>
 </ul>
 
 
