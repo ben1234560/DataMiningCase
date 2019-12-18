@@ -7,12 +7,13 @@
 
 ## 该项目涉及的如下：
 <ul>
-  <li> 数据处理（preprocessing函数）
+  <li> 数据处理
     <ul>
-      <li> 数据切分成训练用数据X，和校对数据y
-      <li> dropna（处理异常值字段）
-      <li> pd.value_counts（正负样本情况）
-      <li> fillna（null值填充）
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/py_bar/skdata.py'>preprocessing函（数据切分成训练用数据X，和校对数据y）</a>
+      </li>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/py_bar/skdata.py'>dropna（处理异常值字段）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/py_bar/skdata.py'>pd.value_counts（正负样本情况）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/py_bar/skdata.py'>fillna（null值填充）</a>
     </ul>
   <li> 模型训练
     <ul>
@@ -31,6 +32,7 @@
 
 
 ## 说明
-<p> 本人水平有限，代码可能有遗漏错误的地方，望不吝赐教，万分感谢。
+<p> 项目代码原型为本人在某行做的流失模型，AUC：85%、召回率：19.4%，精确率：85%（数据是外部数据/代码已脱敏）
+<p> 本人水平有限，代码搬到外部环境可能有遗漏错误的地方，望不吝赐教，万分感谢。
 <p> Email：909336740@qq.com
 <p> QQ：909336740
