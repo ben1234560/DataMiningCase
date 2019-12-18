@@ -9,24 +9,25 @@
 <ul>
   <li> 数据处理
     <ul>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/py_bar/skdata.py'>preprocessing函（数据切分成训练用数据X，和校对数据y）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>preprocessing函（数据切分成训练用数据X，和校对数据y）</a>
       </li>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/py_bar/skdata.py'>dropna（处理异常值字段）</a>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/py_bar/skdata.py'>pd.value_counts（正负样本情况）</a>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/py_bar/skdata.py'>fillna（null值填充）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>dropna（处理异常值字段）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>pd.value_counts（正负样本情况）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>fillna（null值填充）</a>
     </ul>
   <li> 模型训练
     <ul>
-      <li> GridSearchCV（寻找最优参）
-      <li> StratifiedKFold（分层5折模型训练）
-      <li> train_test_split（单次切分模型训练）
-      <li> 输出名单
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/just_num_leaves.py'>GridSearchCV（寻找最优参）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_5_cross.py'>StratifiedKFold（分层5折模型训练）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_2_cross.py'>train_test_split（单次切分模型训练）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_5_cross.py'>输出名单</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_ks.py'>ks值及优threshold</a>
     </ul>
   <li> 画图
     <ul>
-      <li> plot/auc_plot（画AUC图）
-      <li> confusion_matrix/plot_confusion_matrix（画混淆矩阵图）
-      <li> importance_plt（画特征重要性图）
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/auc_plot.py'>plot/auc_plot（画AUC图）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_plot.py'>confusion_matrix/plot_confusion_matrix（画混淆矩阵图）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/importance_plt.py'>importance_plt（画特征重要性图）</a>
     </ul>
 </ul>
 
