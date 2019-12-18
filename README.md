@@ -7,7 +7,10 @@
 
 ## 该项目涉及的如下：
 <ul>
-  <li><a href='https://github.com/ben1234560/DataMiningCase/blob/master/doc/%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90.md'>业务理解（实战）</a>
+  <li>业务理解
+    <ul>
+      <li><a href='https://github.com/ben1234560/DataMiningCase/blob/master/doc/%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90.md'>业务需求分析（实战）</a>
+    </ul>
   </li>
   <li>数据理解
     <ul>
@@ -37,7 +40,10 @@
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_plot.py'>confusion_matrix/plot_confusion_matrix（画混淆矩阵图）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/importance_plt.py'>importance_plt（画特征重要性图）</a>
     </ul>
-  <li> <a href='https://github.com/ben1234560/DataMiningCase/tree/master/doc'>模型评估及实验模板</a>
+  <li> 模型评估及实验
+    <ul>
+      <li><a href='https://github.com/ben1234560/DataMiningCase/tree/master/doc'>模板</a>
+    </ul> 
 </ul>
 
 
