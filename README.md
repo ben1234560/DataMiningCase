@@ -7,12 +7,12 @@
 
 ## 该项目涉及的如下：
 <ul>
-  <li>业务理解
+  <li><a href='https://github.com/ben1234560/DataMiningCase/blob/master/doc/%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90.md'>业务理解（实战）</a>
   </li>
   <li>数据理解
     <ul>
-      <li>数据质量探查
-      <li>重要特征探查
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/doc/%E6%95%B0%E6%8D%AE%E7%90%86%E8%A7%A3.md'>数据质量探查</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/doc/%E6%95%B0%E6%8D%AE%E7%90%86%E8%A7%A3.md'>重要特征探查</a>
     </ul>
   </li>
   <li> 数据处理
