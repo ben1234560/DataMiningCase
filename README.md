@@ -30,6 +30,7 @@
   <li> 模型训练
     <ul>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/just_num_leaves.py'>GridSearchCV（寻找最优参）</a>
+      <li> <a href='https://github.com/microsoft/LightGBM/blob/master/docs/Parameters.rst'>LightGBM参数详解</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_5_cross.py'>StratifiedKFold（分层5折模型训练）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_2_cross.py'>train_test_split（单次切分模型训练）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_5_cross.py'>输出名单</a>
