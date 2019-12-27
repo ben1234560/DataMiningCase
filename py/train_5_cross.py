@@ -12,6 +12,7 @@ import warnings  # 忽略普通警告，不打印太多东西
 def train_5_cross(df_pre, X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', csv_name=0):
     """
     功能: 五折训练并输出名单
+    why: 5折一般是效果比较稳定的，用于线下做的。
     X: 训练数据X（无标签/df型）
     y: 训练数据y（标签/df型）
     X_test_v1: 预测数据X（无标签/df型）

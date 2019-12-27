@@ -14,7 +14,8 @@ plt.rcParams['axes.unicode_minus']=False
 
 def auc_plot(X, y, clf, png_savename=0):
     """
-    功能: 画出AUC图
+    功能: 画出AUC图。
+    why: 能够知道模型的效果，AUC越高，则模型分辨正负样本的能力越好。
     X: 数据X（无标签/df型）
     y: 数据y（标签/df型）
     clf: 已训练过的最佳lgb模型

@@ -33,6 +33,7 @@ def plot_confusion_matrix(cm, classes, title='Confusion matrix', cmap=plt.cm.Blu
 def metrics_plot(X, y, clf, thres=0.45, png_savename=0):
     """
     功能: 画出混淆矩阵图
+    why: 能选择是召回率高，还是精确率高，也能从一定层面看出模型的效果。
     X: 数据X（无标签/df型）
     y: 数据y（标签/df型）
     clf: 已训练过的最佳lgb模型

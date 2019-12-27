@@ -17,6 +17,7 @@ from imblearn.over_sampling import SMOTE, ADASYN  # 目前流行的过采样
 def over_smote_(X, y, num):
     """
     功能: 二分类过采样，以smote举例。
+    why: 当正负样本比例相差过大时，一般为1：20以内。举例：如果正负样本为1：99，那么相当于告诉模型只要判断为负，则正确率就为99%，那么模型就会这么做。
     X: 数据X（df型/无label）
     y: 数据y（df型/label）
     num: 过采样的个数

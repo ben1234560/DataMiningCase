@@ -13,6 +13,7 @@ import warnings  # 忽略普通警告，不打印太多东西
 def just_num_leaves(X, y, start_num=10, end_num=101, step=10):
     """
     功能: 找到最优num_leaves参数，以此类推找出全部的最优参
+    why: 最优参数组能让模型效果更好，一般提升在0~5%左右，如果提升超过5%，那么就要考虑特征是否选取正确，是否有过多的噪音数据。
     X: 数据X（无标签/df型）
     y: 数据y（标签/df型）
     start_num: 开始值

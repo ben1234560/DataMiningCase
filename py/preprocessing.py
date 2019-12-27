@@ -12,6 +12,7 @@ import warnings  # 忽略普通警告，不打印太多东西
 def preprocessing(df_train, df_pre, feats_list=0, label='label', id_1='id'):
     """
     功能:将训练集和预测集做处理，并输出
+    why: 数据处理一般在SQL里面做完，能在SQL里面做完的一定要在SQL里面做。
     df_train: 未处理过的训练集（df型/有label）
     df_pre: 未处理过的预测集（df型/有label）
     feats_list: 特征表，默认使用全部特征，可传入list

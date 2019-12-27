@@ -15,7 +15,8 @@ import seaborn as sns  # 画图工具包
 
 def corr_plt(data, feats, start=0, end=20, png_savename=0):
     """
-    功能: 画相关系数热力图
+    功能: 画相关系数热力图。
+    why: 大于0.75的特征只留一个，不然会造成特征冗余模型效果差，但是现实情况中，一般去掉其中一个就会导致模型效果变差，请慎用。
     data: 数据集（df型）
     feats: 特征集（list性/一般是去掉id和label），可用该方法生成 feats = [x for x in data.columns if x not in ['id','label']]
     start: 用以画相关系数特征的开始点，默认0（int型）

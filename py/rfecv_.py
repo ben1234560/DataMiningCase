@@ -17,7 +17,7 @@ from imblearn.over_sampling import SMOTE, ADASYN  # 目前流行的过采样
 def rfecv_(X, y, feats, lgb_model, cv=5, scoring='roc_auc',verbose=1):
     """
     功能: 减少特征，递归消除选特征，输出结果最优最少的特征组。基于lgb模型
-        （PS:该方法有一定的正反性，即最佳的特征组可能是当前数据的最近，以后数据变化了可能就不是了，建议多测几次）
+    why: 防止特征冗余，该方法有一定的正反性，即最佳的特征组可能是当前数据的最近，以后数据变化了可能就不是了，建议多测几次。
     X: 训练数据X（无标签/df型）
     y: 训练数据y（标签/df型）
     feats: 特征集（list性/一般是去掉id和label），可用该方法生成 feats = [x for x in data.columns if x not in ['id','label']]

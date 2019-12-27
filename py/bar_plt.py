@@ -16,6 +16,7 @@ import seaborn as sns  # 画图工具包
 def bar_plt(label, feat, data, png_savename=0):
     """
     功能:画二分类柱状图
+    why: 通过该图能够明显的看出正负样本在不同区间的差异，更能找到特征。
     data: 数据集（df型）
     feat: 单个特征（str型）
     label: 标签（str型）

@@ -15,6 +15,7 @@ plt.rcParams['axes.unicode_minus']=False
 def importance_plt(X, clf, png_savename=0):
     """
     功能:打印特征重要图
+    why: 能看出哪个特征更重要，继而对特征做相关衍生，也可以讲特征使用次数为0的特征去掉，防止冗余。
     X: 数据X（无标签/df型）
     clf: 已训练过的最佳lgb模型
     png_savename: 保存图片的名字，默认不保存
