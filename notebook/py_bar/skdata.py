@@ -17,6 +17,7 @@ from imblearn.over_sampling import SMOTE, ADASYN  # 目前流行的过采样
 def preprocessing(df_train, df_pre, feats_list=0, label='label', id_1='id'):
     """
     功能:将训练集和预测集做处理，并输出
+    why: 数据处理一般在SQL里面做完，能在SQL里面做完的一定要在SQL里面做。
     df_train: 未处理过的训练集（df型/有label）
     df_pre: 未处理过的预测集（df型/有label）
     feats_list: 特征表，默认使用全部特征，可传入list
@@ -72,6 +73,7 @@ def preprocessing(df_train, df_pre, feats_list=0, label='label', id_1='id'):
 def train_5_cross(df_pre, X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', csv_name=0):
     """
     功能: 五折训练并输出名单
+    why: 5折一般是效果比较稳定的，用于线下做的。
     X: 训练数据X（无标签/df型）
     y: 训练数据y（标签/df型）
     X_test_v1: 预测数据X（无标签/df型）
@@ -182,6 +184,7 @@ def metrics_ks(y, y_predicted):
 def just_num_leaves(X, y, start_num=10, end_num=101, step=10):
     """
     功能: 找到最优num_leaves参数，以此类推找出全部的最优参
+    why: 最优参数组能让模型效果更好，一般提升在0~5%左右，如果提升超过5%，那么就要考虑特征是否选取正确，是否有过多的噪音数据。
     X: 数据X（无标签/df型）
     y: 数据y（标签/df型）
     start_num: 开始值
@@ -203,6 +206,7 @@ def just_num_leaves(X, y, start_num=10, end_num=101, step=10):
 def train_2_cross(df_pre,X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', csv_name=0):
     """
     功能:切分一次训练，输出名单
+    why: 两折一般是上线的版本。因为比较简单直接
     X: 训练数据X（无标签/df型）
     y: 训练数据y（标签/df型）
     X_test_v1: 预测数据X（无标签/df型）
@@ -281,7 +285,7 @@ lgb_params = {
 def rfecv_(X, y, feats, lgb_model, cv=5, scoring='roc_auc',verbose=1):
     """
     功能: 减少特征，递归消除选特征，输出结果最优最少的特征组。基于lgb模型
-        （PS:该方法有一定的正反性，即最佳的特征组可能是当前数据的最近，以后数据变化了可能就不是了，建议多测几次）
+    why: 防止特征冗余，该方法有一定的正反性，即最佳的特征组可能是当前数据的最近，以后数据变化了可能就不是了，建议多测几次。
     X: 训练数据X（无标签/df型）
     y: 训练数据y（标签/df型）
     feats: 特征集（list性/一般是去掉id和label），可用该方法生成 feats = [x for x in data.columns if x not in ['id','label']]
@@ -301,9 +305,13 @@ def rfecv_(X, y, feats, lgb_model, cv=5, scoring='roc_auc',verbose=1):
 def over_smote_(X, y, num):
     """
     功能: 二分类过采样，以smote举例。
+    why: 当正负样本比例相差过大时，一般为1：20以内。举例：如果正负样本为1：99，那么相当于告诉模型只要判断为负，则正确率就为99%，那么模型就会这么做。
     X: 数据X（df型/无label）
     y: 数据y（df型/label）
     num: 过采样的个数
+    reture: 
+        X_resampled: 过采样后的X
+        y_resampled: 过采样后的y
     """
     ss = pd.Series(y).value_counts()
     smote = SMOTE(sampling_strategy={0:ss[0],1:ss[1]+num},random_state=2019)  # radom_state为随机值种子，1:ss[1]+表示label为1的数据增加多少个

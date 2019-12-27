@@ -16,6 +16,7 @@ import seaborn as sns  # 画图工具包
 def auc_plot(X, y, clf, png_savename=0):
     """
     功能: 画出AUC图
+    why: 能够知道模型的效果，AUC越高，则模型分辨正负样本的能力越好。
     X: 数据X（无标签/df型）
     y: 数据y（标签/df型）
     clf: 已训练过的最佳lgb模型
@@ -60,6 +61,7 @@ def plot_confusion_matrix(cm, classes, title='Confusion matrix', cmap=plt.cm.Blu
 def metrics_plot(X, y, clf, thres=0.45, png_savename=0):
     """
     功能: 画出混淆矩阵图
+    why: 能选择是召回率高，还是精确率高，也能从一定层面看出模型的效果。
     X: 数据X（无标签/df型）
     y: 数据y（标签/df型）
     clf: 已训练过的最佳lgb模型
@@ -83,6 +85,7 @@ def metrics_plot(X, y, clf, thres=0.45, png_savename=0):
 def importance_plt(X, clf, png_savename=0):
     """
     功能:打印特征重要图
+    why: 能看出哪个特征更重要，继而对特征做相关衍生，也可以讲特征使用次数为0的特征去掉，防止冗余。
     X: 数据X（无标签/df型）
     clf: 已训练过的最佳lgb模型
     png_savename: 保存图片的名字，默认不保存
@@ -106,6 +109,7 @@ def importance_plt(X, clf, png_savename=0):
 def corr_plt(data, feats, start=0, end=20, png_savename=0):
     """
     功能: 画相关系数热力图
+    why: 大于0.75的特征只留一个，不然会造成特征冗余模型效果差，但是现实情况中，一般去掉其中一个就会导致模型效果变差，请慎用。
     data: 数据集（df型）
     feats: 特征集（list性/一般是去掉id和label），可用该方法生成 feats = [x for x in data.columns if x not in ['id','label']]
     start: 用以画相关系数特征的开始点，默认0（int型）
@@ -124,6 +128,7 @@ def corr_plt(data, feats, start=0, end=20, png_savename=0):
 def kde_plt(data, feat, label="label",png_savename=0):
     """
     功能: 画二分类密度线图
+    why: 通过该图能够明显的看出正负样本在不同区间的差异，更能找到特征。
     data: 数据集（df型）
     feat: 单个特征（str型）
     label: 标签（str型）
@@ -141,6 +146,7 @@ def kde_plt(data, feat, label="label",png_savename=0):
 def bar_plt(label, feat, data, png_savename=0):
     """
     功能:画二分类柱状图
+    why: 通过该图能够明显的看出正负样本在不同区间的差异，更能找到特征。
     data: 数据集（df型）
     feat: 单个特征（str型）
     label: 标签（str型）

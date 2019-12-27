@@ -21,6 +21,9 @@ def over_smote_(X, y, num):
     X: 数据X（df型/无label）
     y: 数据y（df型/label）
     num: 过采样的个数
+    reture: 
+        X_resampled: 过采样后的X
+        y_resampled: 过采样后的y
     """
     ss = pd.Series(y).value_counts()
     smote = SMOTE(sampling_strategy={0:ss[0],1:ss[1]+num},random_state=2019)  # radom_state为随机值种子，1:ss[1]+表示label为1的数据增加多少个
