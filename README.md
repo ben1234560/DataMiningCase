@@ -29,6 +29,24 @@
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>pd.value_counts（正负样本情况）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>fillna（null值填充）</a>
     </ul>
+  <li> 特征工程
+      <ul>
+          <li>
+              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/importance_plt.py'>corr（特征相关系数图）</a>
+          </li>
+          <li>
+              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/bar_plt.py'>正负样本特征柱状图</a>
+          </li>
+          <li>
+              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/kde_plt.py'>正负样本特征线性图</a>
+          </li>
+          <li>
+              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/rfecv_.py'>rfecv（特征五折递归消除）</a>
+          </li>
+          <li>
+              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/importance_plt.py'>importance（基于模型的特征重要性）</a>
+          </li>
+      </ul>
   <li> 模型训练
     <ul>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/just_num_leaves.py'>GridSearchCV（寻找最优参）</a>
@@ -42,7 +60,6 @@
     <ul>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/auc_plot.py'>plot/auc_plot（画AUC图）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_plot.py'>confusion_matrix/plot_confusion_matrix（画混淆矩阵图）</a>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/importance_plt.py'>importance_plt（画特征重要性图）</a>
     </ul>
   <li> 模型评估及实验
     <ul>
