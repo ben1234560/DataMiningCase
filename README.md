@@ -28,6 +28,7 @@
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>dropna（处理异常值字段）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>pd.value_counts（正负样本情况）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>fillna（null值填充）</a>
+      <li> <a herf='https://github.com/ben1234560/DataMiningCase/blob/master/py/over_smote_.py'>smote（过采样）</a>
     </ul>
   <li> 特征工程
       <ul>
