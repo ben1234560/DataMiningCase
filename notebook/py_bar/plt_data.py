@@ -10,6 +10,7 @@ import warnings  # 忽略普通警告，不打印太多东西
 warnings.filterwarnings('ignore')
 plt.rcParams['font.sans-serif']=['SimHei']  # 让图形可以显示中文
 plt.rcParams['axes.unicode_minus']=False
+import seaborn as sns  # 画图工具包
 
 
 def auc_plot(X, y, clf, png_savename=0):
@@ -100,3 +101,54 @@ def importance_plt(X, clf, png_savename=0):
     if png_savename:
         plt.savefig("特征重要性.png", dpi=500, bbox_inches='tight')  # 由于特征过多图片过大，所以需要这些处理才能让图片全部保存下来
     plt.show()
+    
+    
+def corr_plt(data, feats, start=0, end=20, png_savename=0):
+    """
+    功能: 画相关系数热力图
+    data: 数据集（df型）
+    feats: 特征集（list性/一般是去掉id和label），可用该方法生成 feats = [x for x in data.columns if x not in ['id','label']]
+    start: 用以画相关系数特征的开始点，默认0（int型）
+    end: 用以画相关系数特征的结束点，默认30，-1为最终点（int型）
+    png_savename: 保存图片的名字，默认不保存（str型）
+    reture:
+        输出相关系数图，可返回图片
+    """
+    corr = data[feats[start:end]].corr()  # 获取相关系数值 
+    plt.figure(figsize=(20,10))    # 画布大小
+    sns.heatmap(corr, annot=True)   ### 画出热力图， annot是否在方格中置入值
+    if png_savename:
+        plt.savefig("%s_相关系数图.png" % png_savename)  # 保存相关系数图
+        
+        
+def kde_plt(data, feat, label="label",png_savename=0):
+    """
+    功能: 画二分类密度线图
+    data: 数据集（df型）
+    feat: 单个特征（str型）
+    label: 标签（str型）
+    png_savename: 保存图片，以feat为名字，默认不保存
+    return:
+        返回二分类图，可保存图片
+    """
+    sns.kdeplot(data[data['label']==0][feat], label='label_0', shade=True)  # feat是取的特征，0/1是正负样本，label是命名，shade为阴影
+    sns.kdeplot(data[data['label']==1][feat], label='label_1', shade=True)
+    plt.title(feat)
+    if png_savename:
+        plt.savefig("%s_二分类密度线图.png" % feat)  # 保存二分类图，以feat为名字
+        
+        
+def bar_plt(label, feat, data, png_savename=0):
+    """
+    功能:画二分类柱状图
+    data: 数据集（df型）
+    feat: 单个特征（str型）
+    label: 标签（str型）
+    png_savename: 保存图片，以feat为名字，默认不保存
+    return:
+        返回二分类图，可保存图片
+    """
+    sns.barplot(x=label, y=feat, data=data, hue=feat)  # x为label，y为label对应的值，hue为指定的分类变量
+    plt.title(feat)
+    if png_savename:
+        plt.savefig("%s_二分类柱状图.png" % feat)  # 保存二分类图，以feat为名字

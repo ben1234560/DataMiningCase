@@ -7,6 +7,11 @@ from sklearn.metrics import accuracy_score, roc_curve, auc, confusion_matrix  # 
 import itertools  # 处理混淆矩阵
 import gc  # 处理缓存，有兴趣的可以搜搜怎么使用
 import warnings  # 忽略普通警告，不打印太多东西
+from sklearn.feature_selection import RFE, RFECV  # 递归消除选特征，前者是自己选优化到多少位，后者是自动cv优化到最佳
+from imblearn.under_sampling import RandomUnderSampler  # 朴素随机过采样，由于是比较旧的这里不做例子
+from imblearn.over_sampling import SMOTE, ADASYN  # 目前流行的过采样
+# SMOTE: 对于少数类样本a, 随机选择一个最近邻的样本b, 然后从a与b的连线上随机选取一个点c作为新的少数类样本;
+# ADASYN: 关注的是在那些基于K最近邻分类器被错误分类的原始样本附近生成新的少数类样本;
 
 
 def preprocessing(df_train, df_pre, feats_list=0, label='label', id_1='id'):
@@ -257,3 +262,58 @@ def train_2_cross(df_pre,X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', c
     print("================输出名单名单==================")
     print(submission.head(5))
     return clf
+
+
+# 测试用lgb_params 参数
+lgb_params = {
+    'boosting': 'gbdt',
+    'objective': 'binary',
+    'metric': 'auc',
+    'learning_rate': 0.06,
+    'num_leaves': 31,
+    'max_depth': -1,
+    'bagging_fraction': 0.8,
+    'bagging_freq': 5,
+    'feature_fraction': 0.8
+}
+
+
+def rfecv_(X, y, feats, lgb_model, cv=5, scoring='roc_auc',verbose=1):
+    """
+    功能: 减少特征，递归消除选特征，输出结果最优最少的特征组。基于lgb模型
+        （PS:该方法有一定的正反性，即最佳的特征组可能是当前数据的最近，以后数据变化了可能就不是了，建议多测几次）
+    X: 训练数据X（无标签/df型）
+    y: 训练数据y（标签/df型）
+    feats: 特征集（list性/一般是去掉id和label），可用该方法生成 feats = [x for x in data.columns if x not in ['id','label']]
+    lgb_model: 模型参数
+    reture:
+        rfe_cv_model: 特征相关信息对象
+        selected_feat: 当前数据消除后特征组
+    """
+    lgb_model = lgb.LGBMClassifier(**lgb_params)  # 传入参数字典
+    rfe_cv_model = RFECV(lgb_model, cv=5, scoring='roc_auc', verbose=1) # 自动选择特定的特征数量,cv为多少折，scoring为评分标准，verbose为信息显示
+    rfe_cv_model.fit(X, y)  # 开始训练
+    selected_feat = np.array(feats)[rfe_cv_model.support_].tolist()  # 拿出特征
+    print("剩余特征：", len(selected_feat))
+    return rfe_cv_model, selected_feat
+
+
+def over_smote_(X, y, num):
+    """
+    功能: 二分类过采样，以smote举例。
+    X: 数据X（df型/无label）
+    y: 数据y（df型/label）
+    num: 过采样的个数
+    """
+    ss = pd.Series(y).value_counts()
+    smote = SMOTE(sampling_strategy={0:ss[0],1:ss[1]+num},random_state=2019)  # radom_state为随机值种子，1:ss[1]+表示label为1的数据增加多少个
+    # adasyn = ADASYN(sampling_strategy={0:ss[0],1:ss[1]+800},random_state=2019) # 改变正样本数量参数
+    X_resampled, y_resampled = smote.fit_resample(X, y)
+    print("过采样个数为：", num)
+    check_num_X = X_resampled.shape[0] - X.shape[0]
+    check_num_y = y_resampled.shape[0] - y.shape[0]
+    if (check_num_X == check_num_y) and (check_num_X == num):
+        print("过采样校验：成功")
+        return X_resampled, y_resampled
+    else:
+        print("过采样校验：失败")
