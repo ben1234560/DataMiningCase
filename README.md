@@ -33,7 +33,7 @@
   <li> 特征工程
       <ul>
           <li>
-              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/importance_plt.py'>corr（特征相关系数图）</a>
+              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/corr_plt.py'>corr（特征相关系数图）</a>
           </li>
           <li>
               <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/bar_plt.py'>正负样本特征柱状图</a>
@@ -67,6 +67,7 @@
       <li><a href='https://github.com/ben1234560/DataMiningCase/tree/master/doc'>模板</a>
     </ul> 
 </ul>
+
 
 
 ## 说明
