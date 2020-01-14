@@ -64,11 +64,18 @@
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/auc_plot.py'>plot/auc_plot（画AUC图）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_plot.py'>confusion_matrix/plot_confusion_matrix（画混淆矩阵图）</a>
     </ul>
+  <li> 模型融合
+      <ul>
+          <li><a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88.ipynb'>stacking模型融合_note版(含简单加权融合)</a>
+          <li><a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/stacking_fusion.py'>stacking模型融合_py版</a></li>
+          </li>
+      </ul>
   <li> 模型评估及实验
     <ul>
       <li><a href='https://github.com/ben1234560/DataMiningCase/tree/master/doc'>模板</a>
     </ul> 
 </ul>
+
 
 
 
