@@ -25,7 +25,7 @@
   </li>
   <li> 数据处理
     <ul>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>preprocessing函（数据切分成训练用数据X，和校对数据y）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>preprocessing函数（切分训练数据和预测数据）</a>
       </li>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>dropna（处理异常值字段）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>pd.value_counts（正负样本情况）</a>
