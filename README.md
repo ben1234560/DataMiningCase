@@ -28,8 +28,8 @@
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>Preprocessing函数（切分训练数据和预测数据）</a>
       </li>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>Dropna（处理异常值字段）</a>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>pd.value_counts（正负样本情况）</a>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>fillna（null值填充）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>Pd.value_counts（正负样本情况）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>Fillna（null值填充）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/over_smote_.py'>Smote（过采样）</a>
     </ul>
   <li> 特征工程
@@ -75,6 +75,7 @@
       <li><a href='https://github.com/ben1234560/DataMiningCase/tree/master/doc'>模板</a>
     </ul> 
 </ul>
+
 
 
 
