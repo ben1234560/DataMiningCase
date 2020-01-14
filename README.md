@@ -25,17 +25,17 @@
   </li>
   <li> 数据处理
     <ul>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>preprocessing函数（切分训练数据和预测数据）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>Preprocessing函数（切分训练数据和预测数据）</a>
       </li>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>dropna（处理异常值字段）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>Dropna（处理异常值字段）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>pd.value_counts（正负样本情况）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>fillna（null值填充）</a>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/over_smote_.py'>smote（过采样）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/over_smote_.py'>Smote（过采样）</a>
     </ul>
   <li> 特征工程
       <ul>
           <li>
-              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/corr_plt.py'>corr（特征相关系数图）</a>
+              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/corr_plt.py'>Corr（特征相关系数图）</a>
           </li>
           <li>
               <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/bar_plt.py'>正负样本特征柱状图</a>
@@ -44,10 +44,10 @@
               <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/kde_plt.py'>正负样本特征线性图</a>
           </li>
           <li>
-              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/rfecv_.py'>rfecv（特征五折递归消除）</a>
+              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/rfecv_.py'>RFECV（特征五折递归消除）</a>
           </li>
           <li>
-              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/importance_plt.py'>importance（基于模型的特征重要性）</a>
+              <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/importance_plt.py'>Importance（基于模型的特征重要性）</a>
           </li>
       </ul>
   <li> 模型训练
@@ -55,19 +55,19 @@
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/just_num_leaves.py'>GridSearchCV（寻找最优参）</a>
       <li> <a href='https://github.com/microsoft/LightGBM/blob/master/docs/Parameters.rst'>LightGBM参数详解</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_5_cross.py'>StratifiedKFold（分层5折模型训练）</a>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_2_cross.py'>train_test_split（单次切分模型训练）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_2_cross.py'>Train_test_split（单次切分模型训练）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_5_cross.py'>输出名单</a>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_ks.py'>ks值及优threshold</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_ks.py'>Ks值及优Threshold</a>
     </ul>
   <li> 画图
     <ul>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/auc_plot.py'>plot/auc_plot（画AUC图）</a>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_plot.py'>confusion_matrix/plot_confusion_matrix（画混淆矩阵图）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/auc_plot.py'>Plot/auc_plot（画AUC图）</a>
+      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_plot.py'>Confusion_matrix/plot_confusion_matrix（画混淆矩阵图）</a>
     </ul>
   <li> 模型融合
       <ul>
-          <li><a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88.ipynb'>stacking模型融合_note版(含简单加权融合)</a>
-          <li><a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/stacking_fusion.py'>stacking模型融合_py版</a></li>
+          <li><a href='https://github.com/ben1234560/DataMiningCase/blob/master/notebook/%E6%A8%A1%E5%9E%8B%E8%9E%8D%E5%90%88.ipynb'>Stacking模型融合_note版(含简单加权融合)</a>
+          <li><a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/stacking_fusion.py'>Stacking模型融合_py版</a></li>
           </li>
       </ul>
   <li> 模型评估及实验
