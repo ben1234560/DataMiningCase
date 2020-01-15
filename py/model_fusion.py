@@ -7,6 +7,8 @@ import xgboost as xgb  # xgb模型，安装的方法是在anaconda promote里，
 from sklearn.linear_model import LogisticRegression  # 载入lr模型，这里lr模型用作第二层模型
 
 """
+为什么需要模型融合：多个学习器进行结合，常可获得比单一学习器显著优越的泛化性能。 --《机器学习 周志华》
+
 stacking模型融合策略：我们的第一层模型是lgb和xgb，第二层模型是lr
 第一层模型的作用：将数据训练并预测，并将训练结果和预测结果作为特征
 第二层模型的作用：将第一层的两个模型的训练结果和预测结果作为训练集和预测集，对数据进行训练和预测
