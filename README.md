@@ -11,8 +11,13 @@
 ### 注释覆盖率为80%左右，旨在帮助快速入门，新手级，持续更新，提供免费支持，只需要一颗star
 
 ## 该项目涉及的如下：
+
+![1579224338674](assets/1579224338674.png)
+
+
+
 <ul>
-  <li>业务理解
+  <li>商业理解
     <ul>
       <li><a href='https://github.com/ben1234560/DataMiningCase/blob/master/doc/%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90.md'>业务需求分析（实战）</a>
     </ul>
@@ -23,7 +28,7 @@
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/doc/%E6%95%B0%E6%8D%AE%E7%90%86%E8%A7%A3.md'>重要特征探查</a>
     </ul>
   </li>
-  <li> 数据处理
+  <li> 数据处理（数据准备）
     <ul>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>Preprocessing函数（切分训练数据和预测数据）</a>
       </li>
@@ -32,7 +37,7 @@
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/preprocessing.py'>Fillna（null值填充）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/over_smote_.py'>Smote（过采样）</a>
     </ul>
-  <li> 特征工程
+  <li> 特征工程（数据准备）
       <ul>
           <li>
               <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/corr_plt.py'>Corr（特征相关系数图）</a>
@@ -50,7 +55,7 @@
               <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/importance_plt.py'>Importance（基于模型的特征重要性）</a>
           </li>
       </ul>
-  <li> 模型训练
+  <li> 建立模型
     <ul>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/just_num_leaves.py'>GridSearchCV（寻找最优参）</a>
       <li> <a href='https://github.com/microsoft/LightGBM/blob/master/docs/Parameters.rst'>LightGBM参数详解</a>
@@ -58,11 +63,6 @@
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_2_cross.py'>Train_test_split（单次切分模型训练）</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/train_5_cross.py'>输出名单</a>
       <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_ks.py'>Ks值及优Threshold</a>
-    </ul>
-  <li> 画图
-    <ul>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/auc_plot.py'>Plot/auc_plot（画AUC图）</a>
-      <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_plot.py'>Confusion_matrix/plot_confusion_matrix（画混淆矩阵图）</a>
     </ul>
   <li> 模型融合
       <ul>
@@ -72,9 +72,17 @@
       </ul>
   <li> 模型评估及实验
     <ul>
-      <li><a href='https://github.com/ben1234560/DataMiningCase/tree/master/doc'>模板</a>
+      <li> 画图
+        <ul>
+          <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/auc_plot.py'>Plot/auc_plot（画AUC图）</a>
+          <li> <a href='https://github.com/ben1234560/DataMiningCase/blob/master/py/metrics_plot.py'>Confusion_matrix/plot_confusion_matrix（画混淆矩阵图）</a>
+        </ul>
+    </ul>
+    <ul>
+      <li><a href='https://github.com/ben1234560/DataMiningCase/tree/master/doc'>实验模板</a>
     </ul> 
 </ul>
+
 
 
 
