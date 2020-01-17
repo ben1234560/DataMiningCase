@@ -78,7 +78,7 @@
       <li><a href='https://github.com/ben1234560/DataMiningCase/tree/master/doc'>实验模板</a>
     </ul> 
 </ul>
-<img src="assets/数据挖掘流程图.png" alt="数据挖掘流程图" title="数据挖掘流程图" width="300"  height = "300" />
+<img src="assets/数据挖掘流程图.png" alt="数据挖掘流程图" title="数据挖掘流程图" width="330"  height = "300" />
 
 ## 说明
 <p> 本专题并不用于商业用途，转载请注明本专题地址，如有侵权，请务必邮件通知作者。
