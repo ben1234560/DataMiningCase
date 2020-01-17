@@ -12,7 +12,7 @@
 
 ## 该项目涉及的如下：
 
-<img src="assets/数据挖掘流程图.png"  width="200"  height = "300" />
+<img src="assets/数据挖掘流程图.png" alt="数据挖掘流程图" title="数据挖掘流程图" width="200"  height = "300" />
 
 <ul>
   <li>商业理解
