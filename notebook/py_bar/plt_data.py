@@ -125,7 +125,7 @@ def corr_plt(data, feats, start=0, end=20, png_savename=0):
         plt.savefig("%s_相关系数图.png" % png_savename)  # 保存相关系数图
         
         
-def kde_plt(data, feat, label="label",png_savename=0):
+def kde_plt(data, feat, label,png_savename=0):
     """
     功能: 画二分类密度线图
     why: 通过该图能够明显的看出正负样本在不同区间的差异，更能找到特征。
@@ -136,14 +136,14 @@ def kde_plt(data, feat, label="label",png_savename=0):
     return:
         返回二分类图，可保存图片
     """
-    sns.kdeplot(data[data['label']==0][feat], label='label_0', shade=True)  # feat是取的特征，0/1是正负样本，label是命名，shade为阴影
-    sns.kdeplot(data[data['label']==1][feat], label='label_1', shade=True)
+    sns.kdeplot(data[data[label]==0][feat], label='label_0', shade=True)  # feat是取的特征，0/1是正负样本，label是命名，shade为阴影
+    sns.kdeplot(data[data[label]==1][feat], label='label_1', shade=True)
     plt.title(feat)
     if png_savename:
         plt.savefig("%s_二分类密度线图.png" % feat)  # 保存二分类图，以feat为名字
         
         
-def bar_plt(label, feat, data, png_savename=0):
+def bar_plt(data, feat, label,png_savename=0):
     """
     功能:画二分类柱状图
     why: 通过该图能够明显的看出正负样本在不同区间的差异，更能找到特征。

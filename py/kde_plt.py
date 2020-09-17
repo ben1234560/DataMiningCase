@@ -13,7 +13,7 @@ plt.rcParams['axes.unicode_minus']=False
 import seaborn as sns  # 画图工具包
 
 
-def kde_plt(data, feat, label="label",png_savename=0):
+def kde_plt(data, feat, label, png_savename=0):
     """
     功能: 画二分类密度线图
     why: 通过该图能够明显的看出正负样本在不同区间的差异，更能找到特征。
