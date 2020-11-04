@@ -13,19 +13,18 @@ plt.rcParams['axes.unicode_minus']=False
 import seaborn as sns  # 画图工具包
 
 
-def auc_plot(X, y, clf, png_savename=0):
+def auc_plot(y, y_pro, thre=0.5, png_savename=0):
     """
     功能: 画出AUC图
     why: 能够知道模型的效果，AUC越高，则模型分辨正负样本的能力越好。
-    X: 数据X（无标签/df型）
-    y: 数据y（标签/df型）
+    y: 实际正样本
+    y_pro：预测概率
     clf: 已训练过的最佳lgb模型
     png_savename: 保存图片的名字，默认不保存
     return: AUC图
     """
-    y_pre = clf.predict(X)
-    y_prb_1 = clf.predict_proba(X)[:,1]  # 输出预测的概率
-    fpr, tpr, thres = roc_curve(y, y_prb_1)
+    y_pre = y_pro > thre
+    fpr, tpr, thres = roc_curve(y, y_pro)
     roc_auc = auc(fpr, tpr)  # 计算AUC
     # 画出AUC
     plt.plot(fpr, tpr, label="AUC = {0:.4f}".format(roc_auc), ms=100)
@@ -58,19 +57,17 @@ def plot_confusion_matrix(cm, classes, title='Confusion matrix', cmap=plt.cm.Blu
         plt.xlabel("Predicted label")
         
         
-def metrics_plot(X, y, clf, thres=0.45, png_savename=0):
+def metrics_plot(y,y_pro,thres=0.5, png_savename=0):
     """
     功能: 画出混淆矩阵图
     why: 能选择是召回率高，还是精确率高，也能从一定层面看出模型的效果。
-    X: 数据X（无标签/df型）
-    y: 数据y（标签/df型）
-    clf: 已训练过的最佳lgb模型
+    y: 实际正样本
+    y_pro：预测概率
     thres: 阈值，多少以上为预测正确
     png_savename: 保存图片的名字，默认不保存
     return: 输出混淆矩阵图
     """
-    y_pred_proba = clf.predict_proba(X.values)  # 获取概率
-    y_prediction = y_pred_proba[:, 1] > thres  # 多少以上的概率判定为正
+    y_prediction = y_pro[:, 1] > thres  # 多少以上的概率判定为正
     cnf_matrix = confusion_matrix(y, y_prediction)  # 形成混淆矩阵
     np.set_printoptions(precision=2)  # 设置浮点精度
     vali_recall = '{0:.3f}'.format(cnf_matrix[1,1]/(cnf_matrix[1,0]+cnf_matrix[1,1]))  # 召回率

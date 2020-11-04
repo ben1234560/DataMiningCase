@@ -34,15 +34,13 @@ def metrics_plot(X, y, clf, thres=0.45, png_savename=0):
     """
     功能: 画出混淆矩阵图
     why: 能选择是召回率高，还是精确率高，也能从一定层面看出模型的效果。
-    X: 数据X（无标签/df型）
-    y: 数据y（标签/df型）
-    clf: 已训练过的最佳lgb模型
+    y: 实际正样本
+    y_pro：预测概率
     thres: 阈值，多少以上为预测正确
     png_savename: 保存图片的名字，默认不保存
     return: 输出混淆矩阵图
     """
-    y_pred_proba = clf.predict_proba(X.values)  # 获取概率
-    y_prediction = y_pred_proba[:, 1] > thres  # 多少以上的概率判定为正
+    y_prediction = y_pro[:, 1] > thres  # 多少以上的概率判定为正
     cnf_matrix = confusion_matrix(y, y_prediction)  # 形成混淆矩阵
     np.set_printoptions(precision=2)  # 设置浮点精度
     vali_recall = '{0:.3f}'.format(cnf_matrix[1,1]/(cnf_matrix[1,0]+cnf_matrix[1,1]))  # 召回率

@@ -12,19 +12,18 @@ plt.rcParams['font.sans-serif']=['SimHei']  # 让图形可以显示中文
 plt.rcParams['axes.unicode_minus']=False
 
 
-def auc_plot(X, y, clf, png_savename=0):
+def auc_plot(y, y_pro, thre=0.5, png_savename=0):
     """
-    功能: 画出AUC图。
+    功能: 画出AUC图
     why: 能够知道模型的效果，AUC越高，则模型分辨正负样本的能力越好。
-    X: 数据X（无标签/df型）
-    y: 数据y（标签/df型）
+    y: 实际正样本
+    y_pro：预测概率
     clf: 已训练过的最佳lgb模型
     png_savename: 保存图片的名字，默认不保存
     return: AUC图
     """
-    y_pre = clf.predict(X)
-    y_prb_1 = clf.predict_proba(X)[:,1]  # 输出预测的概率
-    fpr, tpr, thres = roc_curve(y, y_prb_1)
+    y_pre = y_pro > thre
+    fpr, tpr, thres = roc_curve(y, y_pro)
     roc_auc = auc(fpr, tpr)  # 计算AUC
     # 画出AUC
     plt.plot(fpr, tpr, label="AUC = {0:.4f}".format(roc_auc), ms=100)
@@ -37,3 +36,4 @@ def auc_plot(X, y, clf, png_savename=0):
         plt.savefig("%s_AUC图.png" % png_savename)  # 保存AUC图
     plt.show()
     print("Accuracy: {0:.2f}".format(accuracy_score(y, y_pre)))  # 准确率
+ 
