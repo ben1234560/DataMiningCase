@@ -73,7 +73,7 @@ def preprocessing(df_train, df_pre, feats_list=0, label='label', id_1='id'):
 def train_5_cross(df_pre, X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', csv_name=0):
     """
     功能: 五折训练并输出名单
-    why: 5折一般是效果比较稳定的，用于线下做的。
+    df_pre：原始预测数据
     X: 训练数据X（无标签/df型）
     y: 训练数据y（标签/df型）
     X_test_v1: 预测数据X（无标签/df型）
@@ -81,7 +81,7 @@ def train_5_cross(df_pre, X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', 
     thresholds: 阈值选择，默认0.45高精确率
     csv_name: 保存csv的名称，默认不保存
     returen:
-        客户名单及情况
+        模型，客户名单及情况
     """
     vali_auc_num=0  # 验证集AUC
     vali_recall_num=0  # 验证集召回率
@@ -162,6 +162,7 @@ def train_5_cross(df_pre, X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', 
         submission.to_csv("%s预测名单.csv" % csv_name, index=False)  # 保存
     print("================输出名单名单==================")
     print(submission.head(5))
+    return clf
     
     
 def metrics_ks(y, y_predicted):
@@ -205,8 +206,8 @@ def just_num_leaves(X, y, start_num=10, end_num=101, step=10):
     
 def train_2_cross(df_pre,X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', csv_name=0):
     """
-    功能:切分一次训练，输出名单
-    why: 两折一般是上线的版本。因为比较简单直接
+    功能: 五折训练并输出名单
+    df_pre：原始预测数据
     X: 训练数据X（无标签/df型）
     y: 训练数据y（标签/df型）
     X_test_v1: 预测数据X（无标签/df型）
@@ -214,8 +215,7 @@ def train_2_cross(df_pre,X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', c
     thresholds: 阈值选择，默认0.45高精确率
     csv_name: 保存csv的名称，默认不保存
     returen:
-        客户名单及情况
-        clf: 已训练好的模型
+        模型，客户名单及情况
     """
     y_pred_input = np.zeros(len(X_test_v1))  # 相应大小的零矩阵
     train_x, vali_x, train_y,vali_y = train_test_split(X, y, test_size=0.33, random_state=1234)

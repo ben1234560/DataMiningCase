@@ -1,10 +1,7 @@
 import lightgbm as lgb  # 模型
 import pandas as pd  # 数据处理包
 import numpy as np  # 数据处理包
-from sklearn import metrics  # 混淆句子
-from sklearn.metrics import accuracy_score, roc_curve, auc, confusion_matrix  # 准确率、roc计算、auc计算、混淆矩阵
 import matplotlib.pyplot as plt  # 图形处理包
-import itertools  # 处理混淆矩阵
 import gc  # 处理缓存，有兴趣的可以搜搜怎么使用
 import warnings  # 忽略普通警告，不打印太多东西
 warnings.filterwarnings('ignore')

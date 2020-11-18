@@ -30,17 +30,17 @@ def plot_confusion_matrix(cm, classes, title='Confusion matrix', cmap=plt.cm.Blu
         plt.xlabel("Predicted label")
         
         
-def metrics_plot(X, y, clf, thres=0.45, png_savename=0):
+def metrics_plot(y, y_prob, thres=0.45, png_savename=0):
     """
-    功能: 画出混淆矩阵图
     why: 能选择是召回率高，还是精确率高，也能从一定层面看出模型的效果。
-    y: 实际正样本
-    y_pro：预测概率
+    功能: 画出混淆矩阵图
+    y: 真实值y（标签/df型）
+    y_prob：预测概率
     thres: 阈值，多少以上为预测正确
     png_savename: 保存图片的名字，默认不保存
     return: 输出混淆矩阵图
     """
-    y_prediction = y_pro[:, 1] > thres  # 多少以上的概率判定为正
+    y_prediction = y_prob > thres  # 多少以上的概率判定为正
     cnf_matrix = confusion_matrix(y, y_prediction)  # 形成混淆矩阵
     np.set_printoptions(precision=2)  # 设置浮点精度
     vali_recall = '{0:.3f}'.format(cnf_matrix[1,1]/(cnf_matrix[1,0]+cnf_matrix[1,1]))  # 召回率
@@ -49,4 +49,4 @@ def metrics_plot(X, y, clf, thres=0.45, png_savename=0):
     plot_confusion_matrix(cnf_matrix, classes=class_names, title='召回率=%s%% \n 精确率=%s%%' %('{0:.1f}'.format(float(vali_recall)*100),
                                                                                          '{0:.1f}'.format(float(vali_precision)*100)))
     if png_savename!=0:
-        plt.savefig("%s_混淆矩阵.png" % png_savename)  # 保存混淆矩阵图
+        plt.savefig("%s_混淆矩阵.png" % png_savename,dpi=300)  # 保存混淆矩阵图

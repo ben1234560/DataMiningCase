@@ -1,7 +1,6 @@
-import lightgbm as lgb  # 模型
 import pandas as pd  # 数据处理包
 import numpy as np  # 数据处理包
-from sklearn import metrics  # 混淆句子
+from sklearn import metrics  # 混淆矩阵
 from sklearn.model_selection import StratifiedKFold, GridSearchCV, train_test_split  # 分层五折验证包、寻找最优参函数、切分数据
 from sklearn.metrics import accuracy_score, roc_curve, auc, confusion_matrix  # 准确率、roc计算、auc计算、混淆矩阵
 import itertools  # 处理混淆矩阵

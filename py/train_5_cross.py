@@ -20,7 +20,7 @@ def train_5_cross(df_pre, X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', 
     thresholds: 阈值选择，默认0.45高精确率
     csv_name: 保存csv的名称，默认不保存
     returen:
-        客户名单及情况
+        模型，客户名单及情况
     """
     vali_auc_num=0  # 验证集AUC
     vali_recall_num=0  # 验证集召回率
@@ -101,3 +101,4 @@ def train_5_cross(df_pre, X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', 
         submission.to_csv("%s预测名单.csv" % csv_name, index=False)  # 保存
     print("================输出名单名单==================")
     print(submission.head(5))
+    return clf
