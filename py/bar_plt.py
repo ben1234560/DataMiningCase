@@ -6,7 +6,6 @@ import warnings  # 忽略普通警告，不打印太多东西
 warnings.filterwarnings('ignore')
 plt.rcParams['font.sans-serif']=['SimHei']  # 让图形可以显示中文
 plt.rcParams['axes.unicode_minus']=False
-import seaborn as sns  # 画图工具包
 
 
 def bar_plt(label, feat, data, png_savename=0):
@@ -20,7 +19,11 @@ def bar_plt(label, feat, data, png_savename=0):
     return:
         返回二分类图，可保存图片
     """
-    sns.barplot(x=label, y=feat, data=data, hue=feat)  # x为label，y为label对应的值，hue为指定的分类变量
+    label0 = data[feat][data[label]==0].value_counts()
+    label1 = data[feat][data[label]==1].value_counts()
+    df_test = pd.DataFrame({'0':label0/(sum(label0)), '1':label1/(sum(label1))})  # 换成百分比，因为正负样本差异大，不除以sum就是数值
+    df_test.plot(kind='bar', stacked=False,color=['red','blue'])
     plt.title(feat)
+    plt.ylabel('precent')
     if png_savename:
         plt.savefig("%s_二分类柱状图.png" % feat, dpi=300)  # 保存二分类图，以feat为名字

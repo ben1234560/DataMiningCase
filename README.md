@@ -4,8 +4,9 @@
 [![image](https://img.shields.io/badge/conda-jupyter-deepgreen.svg)](https://www.anaconda.com/)
 
 <p> 流失预警模型（二分类），代码原型为本人在某银行做的流失模型，AUC：83%、召回率（覆盖率）：19.4%，精确率：85%（数据是外部数据/代码已脱敏）
-<p> 快速上手数据挖掘（实战）：数据的处理、LightGBM、sklearn包（里面含有：GridSearchCV寻找最优参、StratifiedKFold分层5折切分、train_test_split单次数据切分等）、stacking模型融合、画AUC图、画混淆矩阵图，并输出预测名单。
+<p> 基于真实业务上手数据挖掘（银行流失预警）：数据的处理、LightGBM、sklearn包（里面含有：GridSearchCV寻找最优参、StratifiedKFold分层5折切分、train_test_split单次数据切分等）、stacking模型融合、画AUC图、画混淆矩阵图，并输出预测名单。
 <p> 告诉你：是什么（WHAT）、怎么做(HOW)、为什么这么做(WHY)。
+
 
 
 

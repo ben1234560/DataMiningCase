@@ -140,7 +140,7 @@ def kde_plt(data, feat, label,png_savename=0):
         plt.savefig("%s_二分类密度线图.png" % feat, dpi=300)  # 保存二分类图，以feat为名字
         
         
-def bar_plt(data, feat, label,png_savename=0):
+def bar_plt(label, feat, data, png_savename=0):
     """
     功能:画二分类柱状图
     why: 通过该图能够明显的看出正负样本在不同区间的差异，更能找到特征。
@@ -151,8 +151,12 @@ def bar_plt(data, feat, label,png_savename=0):
     return:
         返回二分类图，可保存图片
     """
-    sns.barplot(x=label, y=feat, data=data, hue=feat)  # x为label，y为label对应的值，hue为指定的分类变量
+    label0 = data[feat][data[label]==0].value_counts()
+    label1 = data[feat][data[label]==1].value_counts()
+    df_test = pd.DataFrame({'0':label0/(sum(label0)), '1':label1/(sum(label1))})  # 换成百分比，因为正负样本差异大，不除以sum就是数值
+    df_test.plot(kind='bar', stacked=False,color=['red','blue'])
     plt.title(feat)
+    plt.ylabel('precent')
     if png_savename:
         plt.savefig("%s_二分类柱状图.png" % feat, dpi=300)  # 保存二分类图，以feat为名字
 
