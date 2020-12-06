@@ -99,6 +99,31 @@ def importance_plt(X, clf, png_savename=0):
     if png_savename:
         plt.savefig("特征重要性.png", dpi=500, bbox_inches='tight')  # 由于特征过多图片过大，需要处理才能让图片全部保存下来,dpi清晰度
     plt.show()
+
+    
+def fit_importance_plt(feats_list, feats_importance, png_savename=0):
+    """
+    功能:打印特征重要图
+    why: 能看出哪个特征更重要，继而对特征做相关衍生，也可以讲特征使用次数为0的特征去掉，防止冗余。
+    feats_list: 特征名，list类型，可以用如下方法获取X.columns.values  # 获取全部特征
+    feats_importance: 已训练过的模型的特征重要性
+        xgb和lgb可以用如下方法获得:
+        feats_importance = clf.feature_importances_  # 获取特征使用次数
+        长这样：array([0.00567917, 0.00615975,],dtype=float32)
+    png_savename: 保存图片的名字，默认不保存
+    return: 打印出特征重要性图
+    """
+    sorted_idx = np.argsort(feats_importance)
+    
+    plt.figure(figsize=(10, 55))
+    # 下面是画图操作
+    plt.barh(range(len(sorted_idx)), feats_importance[sorted_idx], align='center')
+    plt.yticks(range(len(sorted_idx)), np.array(feats_list)[sorted_idx])
+    plt.xlabel("Importance")
+    plt.title("Feature importances")
+    if png_savename:
+        plt.savefig("特征重要性.png", dpi=500, bbox_inches='tight')  # 由于特征过多图片过大，所以需要这些处理才能让图片全部保存下来
+    plt.show()
     
     
 def corr_plt(data, feats, start=0, end=20, png_savename=0):
