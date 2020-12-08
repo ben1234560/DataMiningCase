@@ -10,7 +10,7 @@ import warnings  # 忽略普通警告，不打印太多东西
 
 def metrics_ks(y, y_predicted):
     """
-    功能: 计算模型性能指标：ks， 找到最佳threshold值
+    功能: 计算模型性能指标：ks， 基于ks找到最佳threshold值
     why: ks值越高，则模型效果越好
     y: 数据y（标签/df型）
     y_predicted: 概率值， 公式为：= clf.predict_proba(X)[:, 1]
