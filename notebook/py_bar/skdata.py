@@ -167,7 +167,7 @@ def train_5_cross(df_pre, X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', 
     
 def metrics_ks(y, y_predicted):
     """
-    功能: 计算模型性能指标：ks， 找到最佳threshold值
+    功能: 计算模型性能指标：ks， 基于ks找到最佳threshold值
     y: 数据y（标签/df型）
     y_predicted: 概率值， 公式为：= clf.predict_proba(X)[:, 1]
     return:
