@@ -7,6 +7,7 @@ from sklearn.metrics import accuracy_score, roc_curve, auc, confusion_matrix  # 
 import itertools  # 处理混淆矩阵
 import gc  # 处理缓存，有兴趣的可以搜搜怎么使用
 import warnings  # 忽略普通警告，不打印太多东西
+warnings.filterwarnings('ignore')
 
 
 def train_5_cross(df_pre, X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', csv_name=0):
