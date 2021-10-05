@@ -225,7 +225,7 @@ def train_2_cross(df_pre,X,y, X_test_v1,y_test_v1, thresholds=0.45, id_1='id', c
                             lambda_l2=5)
     clf.fit(train_x, train_y, eval_set=[(train_x, train_y), (vali_x, vali_y)], verbose=0,
            early_stopping_rounds=100, eval_metric='f1')
-    # 这里的参数不懂的去GitHub搜LightGBM的参数解释
+    # 这里的参数不懂的去GitHub搜LightGBM的参数解释，https://lightgbm.readthedocs.io/en/latest/index.html
 
     # ===============验证集AUC操作===================
     y_prb = clf.predict_proba(vali_x)[:,1]  # 获取预测概率
