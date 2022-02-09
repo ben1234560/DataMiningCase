@@ -160,6 +160,7 @@ def kde_plt(data, feat, label,png_savename=0):
     # data['asset_log'] = data['asset'].apply(lambda x:int(math.log(1+x*x))) 这里的math需要导入
     sns.kdeplot(data[data[label]==0][feat], label='label_0', shade=True)  # feat是取的特征，0/1是正负样本，label是命名，shade为阴影
     sns.kdeplot(data[data[label]==1][feat], label='label_1', shade=True)
+    # plt.legend(loc='best') 如果没有显示右上角的标识可以用这个，版本问题
     plt.title(feat)
     if png_savename:
         plt.savefig("%s_二分类密度线图.png" % feat, dpi=300)  # 保存二分类图，以feat为名字
@@ -180,6 +181,7 @@ def bar_plt(label, feat, data, png_savename=0):
     label1 = data[feat][data[label]==1].value_counts()
     df_test = pd.DataFrame({'0':label0/(sum(label0)), '1':label1/(sum(label1))})  # 换成百分比，因为正负样本差异大，不除以sum就是数值
     df_test.plot(kind='bar', stacked=False,color=['red','blue'])
+    # plt.legend(loc='best') 如果没有显示右上角的标识可以用这个，版本问题
     plt.title(feat)
     plt.ylabel('precent')
     if png_savename:
@@ -202,6 +204,7 @@ def scatter_plt(data, feat_1,feat_2, label, png_savename=0):
     plt.scatter(data_label_1[feat_1], data_label_1[feat_2], color='red')
     data_label_0 = data[data[label]==0]
     plt.scatter(data_label_0[feat_1], data_label_0[feat_2], color='green')
+    # plt.legend(loc='best') 如果没有显示右上角的标识可以用这个，版本问题
     plt.title('%s and %s' % (feat_1,feat_2)) 
     plt.xlabel(feat_1)
     plt.ylabel(feat_2)
