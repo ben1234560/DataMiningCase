@@ -166,7 +166,7 @@ def kde_plt(data, feat, label,png_savename=0):
         plt.savefig("%s_二分类密度线图.png" % feat, dpi=300)  # 保存二分类图，以feat为名字
         
         
-def bar_plt(label, feat, data, png_savename=0):
+def bar_plt(data, feat, label, png_savename=0):
     """
     功能:画二分类柱状图
     why: 通过该图能够明显的看出正负样本在不同区间的差异，更能找到特征。
